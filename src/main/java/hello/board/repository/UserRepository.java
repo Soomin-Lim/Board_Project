@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UserRepository {
@@ -17,8 +18,9 @@ public class UserRepository {
         em.persist(user);
     }
 
-    public User findOne(Long id) {
-        return em.find(User.class, id);
+    public Optional<User> findOne(Long id) {
+        User user = em.find(User.class, id);
+        return Optional.ofNullable(user);
     }
 
     public List<User> findAll() {
@@ -26,9 +28,10 @@ public class UserRepository {
                 .getResultList();
     }
 
-    public List<User> findByLoginId(String loginId) {
-        return em.createQuery("select u from User u where u.loginId = :loginId", User.class)
+    public Optional<User> findByLoginId(String loginId) {
+        List<User> result = em.createQuery("select u from User u where u.loginId = :loginId", User.class)
                 .setParameter("loginId", loginId)
                 .getResultList();
+        return result.stream().findAny();
     }
 }

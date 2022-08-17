@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -26,10 +27,10 @@ public class UserService {
     }
 
     private void validateDuplicateLoginId(User user) {
-        List<User> findUsers = userRepository.findByLoginId(user.getLoginId());
-        if (!findUsers.isEmpty()) {
-            throw new IllegalStateException("이미 존재하는 아이디입니다.");
-        }
+        userRepository.findByLoginId(user.getLoginId())
+                .ifPresent(m -> {
+                    throw new IllegalStateException("이미 존재하는 아이디입니다.");
+                });
     }
 
     /**
@@ -42,7 +43,7 @@ public class UserService {
     /**
      * 회원 단건 조회
      */
-    public User findOne(Long id) {
+    public Optional<User> findOne(Long id) {
         return userRepository.findOne(id);
     }
 }

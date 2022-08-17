@@ -1,8 +1,6 @@
 package hello.board.service;
 
 import hello.board.domain.User;
-import hello.board.repository.UserRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,7 +25,7 @@ class UserServiceTest {
         Long joinId = userService.join(user);
 
         //then
-        assertThat(user).isEqualTo(userService.findOne(joinId));
+        assertThat(user).isEqualTo(userService.findOne(joinId).orElseThrow());
     }
 
     @Test

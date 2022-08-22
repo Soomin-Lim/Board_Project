@@ -5,7 +5,7 @@
 - Build Tool: Gradle
 - ORM: JPA
 - database: MYSQL
-- Templete Engine: Thymeleaf
+- Template Engine: Thymeleaf
 - IDE : Intellij
 
 ---

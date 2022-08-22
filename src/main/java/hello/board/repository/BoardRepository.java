@@ -1,6 +1,6 @@
 package hello.board.repository;
 
-import hello.board.domain.Board;
+import hello.board.entity.Board;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

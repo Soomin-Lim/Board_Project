@@ -1,6 +1,6 @@
 package hello.board.repository;
 
-import hello.board.domain.User;
+import hello.board.entity.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

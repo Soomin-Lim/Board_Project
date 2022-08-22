@@ -1,6 +1,6 @@
 package hello.board.service;
 
-import hello.board.domain.User;
+import hello.board.entity.User;
 import hello.board.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -20,10 +20,10 @@ public class User {
     private String loginId; //로그인 ID
     private String password; //비밀번호
     private String name; //사용자 이름
-    private int age; //나이
+    private Integer age; //나이
 
     @Builder
-    public User(String loginId, String password, String name, int age) {
+    public User(String loginId, String password, String name, Integer age) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;

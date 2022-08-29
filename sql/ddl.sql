@@ -15,7 +15,7 @@ create table board (
         title varchar(255),
         content text,
         user_id bigint,
-        register_date datetime,
+        register_date varchar(20),
         primary key (board_id),
         constraint fk_user_board
         foreign key (user_id)

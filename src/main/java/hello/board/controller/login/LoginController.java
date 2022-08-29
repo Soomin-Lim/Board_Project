@@ -39,7 +39,7 @@ public class LoginController {
 
         if (loginUser == null) {
             log.info("login Fail");
-            bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다");
+            bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다.");
             return "login/loginForm";
         }
 

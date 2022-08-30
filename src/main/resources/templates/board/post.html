@@ -20,6 +20,12 @@
         <h2>게시글</h2>
     </div>
 
+    <button class="btn btn-dark pull-right"
+            onclick="location.href='board/postList.html'"
+            th:onclick="|location.href='@{/board}'|"
+            type="button">목록으로
+    </button>
+
     <div>
         <label for="postId">게시판번호</label>
         <input type="text" id="postId" name="postId" class="form-control"
@@ -34,7 +40,8 @@
     <div>
         <label for="postContent">내용</label>
         <textarea class="form-control" rows="5"
-                  id="postContent" name="postContent" th:value="${post.content}" readonly></textarea>
+                  id="postContent" name="postContent"
+                  th:value="${post.content}" th:text="${post.content}" readonly></textarea>
     </div>
     <div>
         <label for="writer">작성자</label>
@@ -50,12 +57,12 @@
 
     <button class="btn btn-primary"
             th:onclick="|location.href='@{/board/{postId}/edit(postId=${post.id})}'|"
-            type="button">게시글 수정</button>
+            type="button">수정</button>
 
-    <button class="btn btn-secondary"
-            onclick="location.href='board/postList.html'"
-            th:onclick="|location.href='@{/board}'|"
-            type="button">목록으로</button>
+    <button class="btn btn-danger"
+            th:onclick="|location.href='@{/board/{postId}/delete(postId=${post.id})}'|"
+            type="button">삭제</button>
+
 
 </div> <!-- /container -->
 

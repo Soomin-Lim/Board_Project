@@ -84,4 +84,10 @@ public class BoardController {
 
         return "redirect:/board/{postId}";
     }
+
+    @PostMapping("/{postId}/delete")
+    public String delete(@PathVariable Long postId) {
+        boardService.deleteById(postId);
+        return "redirect:/board";
+    }
 }

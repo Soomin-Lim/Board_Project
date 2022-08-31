@@ -1,10 +1,8 @@
 package hello.board.service;
 
-import hello.board.entity.Board;
-import hello.board.entity.User;
+import hello.board.domain.Board;
+import hello.board.domain.User;
 import hello.board.repository.BoardRepository;
-import hello.board.repository.UserRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional

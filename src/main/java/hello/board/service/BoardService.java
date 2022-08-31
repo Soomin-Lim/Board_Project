@@ -1,7 +1,7 @@
 package hello.board.service;
 
-import hello.board.entity.Board;
-import hello.board.entity.User;
+import hello.board.domain.Board;
+import hello.board.domain.User;
 import hello.board.repository.BoardRepository;
 import hello.board.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

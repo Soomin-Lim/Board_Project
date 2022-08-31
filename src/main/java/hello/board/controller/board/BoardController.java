@@ -1,8 +1,8 @@
 package hello.board.controller.board;
 
 import hello.board.controller.SessionConst;
-import hello.board.entity.Board;
-import hello.board.entity.User;
+import hello.board.domain.Board;
+import hello.board.domain.User;
 import hello.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

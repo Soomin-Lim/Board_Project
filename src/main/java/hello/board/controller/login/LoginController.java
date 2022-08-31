@@ -1,7 +1,7 @@
 package hello.board.controller.login;
 
 import hello.board.controller.SessionConst;
-import hello.board.entity.User;
+import hello.board.domain.User;
 import hello.board.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,6 +1,6 @@
 package hello.board.controller;
 
-import hello.board.entity.User;
+import hello.board.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
 package hello.board.service;
 
-import hello.board.entity.User;
+import hello.board.domain.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,7 +29,7 @@ class UserServiceTest {
     }
 
     @Test
-    void 중복_회원_예외() throws Exception {
+    void 중복_회원_예외() {
         //given
         User user1 = User.builder().loginId("userA").build();
         User user2 = User.builder().loginId("userA").build();

@@ -21,13 +21,13 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/signup")
-    public String signupForm(@ModelAttribute UserSaveForm userForm) {
+    public String signupForm(@ModelAttribute("userForm") UserSaveForm userForm) {
         log.info("signupForm");
         return "users/signupForm";
     }
 
     @PostMapping("/signup")
-    public String signup(@Valid @ModelAttribute UserSaveForm userForm, BindingResult bindingResult) {
+    public String signup(@Valid @ModelAttribute("userForm") UserSaveForm userForm, BindingResult bindingResult) {
 
         log.info("signup");
 

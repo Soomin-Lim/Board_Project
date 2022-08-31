@@ -1,4 +1,4 @@
-package hello.board.controller;
+package hello.board.controller.user;
 
 import hello.board.domain.User;
 import hello.board.service.UserService;

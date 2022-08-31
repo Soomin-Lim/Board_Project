@@ -1,4 +1,4 @@
-package hello.board.controller;
+package hello.board.controller.user;
 
 import lombok.Getter;
 import lombok.Setter;

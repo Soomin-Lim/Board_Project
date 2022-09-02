@@ -5,10 +5,12 @@ import hello.board.domain.User;
 import hello.board.repository.BoardRepository;
 import hello.board.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.Optional;
 
 @Service
@@ -32,10 +34,17 @@ public class BoardService {
     }
 
     /**
-     * 게시판 전체 조회
+     * 게시글 전체 조회
      */
-    public List<Board> findAll() {
-        return boardRepository.findAll();
+    public HashMap<String, Object> findAll(Integer page, Integer size) {
+        HashMap<String, Object> listMap = new HashMap<>();
+        Page<Board> list = boardRepository.findAll(PageRequest.of(page, size));
+
+        listMap.put("list", list);
+        listMap.put("paging", list.getPageable());
+        listMap.put("totalCnt", list.getTotalElements());
+        listMap.put("totalPage", list.getTotalPages());
+        return listMap;
     }
 
     /**

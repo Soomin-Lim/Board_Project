@@ -23,8 +23,10 @@ public class BoardController {
     private final BoardService boardService;
 
     @GetMapping
-    public String postList(Model model) {
-        model.addAttribute("list", boardService.findAll());
+    public String postList(Model model,
+                           @RequestParam(required = false, defaultValue = "0") Integer page,
+                           @RequestParam(required = false, defaultValue = "5") Integer size) {
+        model.addAttribute("resultMap", boardService.findAll(page, size));
         return "board/postList";
     }
 

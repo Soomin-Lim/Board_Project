@@ -56,4 +56,4 @@
     - 게시글 페이징 기능 수정
         - `Board.id`를 기준으로 내림차순으로 정렬
     - `Board.registerDate` 타입을 `String`에서 `LocalDateTime`으로 변경
-    - 뷰 템플릿에서 `#temporals`를 사용하여 날짜를 'yyyy-MM-dd HH:mm' 형식으로 Format 함
+    - 뷰 템플릿에서 `#temporals`를 사용하여 날짜를 `'yyyy-MM-dd HH:mm'` 형식으로 Format 함

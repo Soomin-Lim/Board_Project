@@ -49,4 +49,11 @@
         - 댓글 기능
         - 예외 처리
 
+---
+### 변경 사항
 - 2022.09.02 : 게시글 페이징 기능 추가
+- 2022.09.05 :
+    - 게시글 페이징 기능 수정
+        - `Board.id`를 기준으로 내림차순으로 정렬
+    - `Board.registerDate` 타입을 `String`에서 `LocalDateTime`으로 변경
+    - 뷰 템플릿에서 `#temporals`를 사용하여 날짜를 'yyyy-MM-dd HH:mm' 형식으로 Format 함

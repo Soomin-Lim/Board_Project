@@ -45,7 +45,8 @@
     <div>
         <label for="registerDate">작성일</label>
         <input type="text" id="registerDate" name="registerDate" class="form-control"
-               value="작성자" th:value="${post.registerDate}" readonly>
+               value="작성자" th:value="${#temporals.format(post.registerDate, 'yyyy-MM-dd HH:mm')}"
+               readonly>
     </div>
     <hr class="my-4">
 

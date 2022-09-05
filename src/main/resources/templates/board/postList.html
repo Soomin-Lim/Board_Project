@@ -45,7 +45,7 @@
                             th:text="${list.title}">제목</a>
                         </td>
                         <td th:text="${list.user.loginId}">작성자</td>
-                        <td th:text="${list.registerDate}">작성일</td>
+                        <td th:text="${#temporals.format(list.registerDate, 'yyyy-MM-dd HH:mm')}">작성일</td>
                     </tr>
                     </tbody>
                 </table>

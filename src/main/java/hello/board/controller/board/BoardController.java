@@ -6,6 +6,9 @@ import hello.board.domain.User;
 import hello.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,9 +27,8 @@ public class BoardController {
 
     @GetMapping
     public String postList(Model model,
-                           @RequestParam(required = false, defaultValue = "0") Integer page,
-                           @RequestParam(required = false, defaultValue = "5") Integer size) {
-        model.addAttribute("resultMap", boardService.findAll(page, size));
+                           @PageableDefault(sort = "id", direction = Sort.Direction.DESC, size = 5) Pageable pageable) {
+        model.addAttribute("resultMap", boardService.findAll(pageable));
         return "board/postList";
     }
 

@@ -7,6 +7,7 @@ import hello.board.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,9 +37,9 @@ public class BoardService {
     /**
      * 게시글 전체 조회
      */
-    public HashMap<String, Object> findAll(Integer page, Integer size) {
+    public HashMap<String, Object> findAll(Pageable page) {
         HashMap<String, Object> listMap = new HashMap<>();
-        Page<Board> list = boardRepository.findAll(PageRequest.of(page, size));
+        Page<Board> list = boardRepository.findAll(page);
 
         listMap.put("list", list);
         listMap.put("paging", list.getPageable());
